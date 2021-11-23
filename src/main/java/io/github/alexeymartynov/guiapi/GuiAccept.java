@@ -1,6 +1,6 @@
-package io.guthub.alexeymartynov.guiapi;
+package io.github.alexeymartynov.guiapi;
 
-import io.guthub.alexeymartynov.util.UtilItem;
+import io.github.alexeymartynov.util.UtilItem;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

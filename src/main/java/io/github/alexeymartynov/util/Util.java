@@ -1,4 +1,4 @@
-package io.guthub.alexeymartynov.util;
+package io.github.alexeymartynov.util;
 
 public class Util {
 

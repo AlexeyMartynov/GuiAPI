@@ -1,4 +1,4 @@
-package io.guthub.alexeymartynov.guiapi;
+package io.github.alexeymartynov.guiapi;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.inventory.InventoryClickEvent;

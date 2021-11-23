@@ -4,12 +4,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.byby</groupId>
+    <groupId>io.github.alexeymartynov</groupId>
     <artifactId>guiapi</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>GuiAPI</name>
+    <name>GuiAPI for Minecraft Bukkit Plugins</name>
+    <description>The easiest way to create Inventory GUI in your Bukkit Plugin</description>
+    <url>https://github.com/AlexeyMartynov/GuiAPI</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:svn:https://github.com/AlexeyMartynov/GuiAPI.git</connection>
+        <developerConnection>scm:svn:https://github.com:AlexeyMartynov/GuiAPI.git</developerConnection>
+        <url>https://github.com/AlexeyMartynov/GuiAPI</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Alexey Martynov</name>
+            <email>alexeymartynov95@gmail.com</email>
+            <organization>io.github.alexeymartynov</organization>
+            <organizationUrl>https://github.com/AlexeyMartynov</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>1.8</java.version>
