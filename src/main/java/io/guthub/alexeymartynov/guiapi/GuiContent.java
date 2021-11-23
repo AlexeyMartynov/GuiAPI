@@ -1,6 +1,6 @@
-package com.byby.guiapi;
+package io.guthub.alexeymartynov.guiapi;
 
-import com.byby.util.UtilItem;
+import io.guthub.alexeymartynov.util.UtilItem;
 import net.minecraft.server.v1_12_R1.Item;
 import net.minecraft.server.v1_12_R1.MinecraftKey;
 import org.bukkit.ChatColor;

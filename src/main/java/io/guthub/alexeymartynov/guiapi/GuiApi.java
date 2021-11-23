@@ -1,4 +1,4 @@
-package com.byby.guiapi;
+package io.guthub.alexeymartynov.guiapi;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;

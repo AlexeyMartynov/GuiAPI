@@ -1,4 +1,4 @@
-package com.byby.guiapi;
+package io.guthub.alexeymartynov.guiapi;
 
 import java.util.ArrayList;
 import java.util.HashMap;

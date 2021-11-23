@@ -1,4 +1,4 @@
-package com.byby.util;
+package io.guthub.alexeymartynov.util;
 
 public class Util {
 

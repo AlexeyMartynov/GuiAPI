@@ -1,9 +1,9 @@
-package com.byby.guiapi;
+package io.guthub.alexeymartynov.guiapi;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.byby.util.UtilItem;
+import io.guthub.alexeymartynov.util.UtilItem;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 

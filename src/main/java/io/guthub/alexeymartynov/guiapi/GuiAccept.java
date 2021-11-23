@@ -1,6 +1,6 @@
-package com.byby.guiapi;
+package io.guthub.alexeymartynov.guiapi;
 
-import com.byby.util.UtilItem;
+import io.guthub.alexeymartynov.util.UtilItem;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
