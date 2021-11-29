@@ -1,17 +1,38 @@
 package io.github.alexeymartynov.guiapi;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class GuiApi extends JavaPlugin {
+import java.io.File;
+
+public final class GuiApi {
+
+    private GuiHandler guiHandler;
+    private File file;
+    private FileConfiguration config;
 
     private static GuiApi instance;
 
-    private GuiHandler guiHandler;
-
-    @Override
-    public void onEnable()
+    public void setup(JavaPlugin plugin)
     {
+        if(plugin == null)
+            return;
+
+        File folder = new File(plugin.getDataFolder() + File.separator + "GuiAPI");
+        if (!folder.exists())
+            folder.mkdir();
+
+        file = new File(folder + File.separator + "config.yml");
+        if (!file.exists())
+        {
+            try { file.createNewFile(); }
+            catch (Exception exception) {}
+        }
+
+        config = YamlConfiguration.loadConfiguration(file);
+
         Bukkit.getLogger().severe("GuiAPI by bybyzyanka was enabled");
         Bukkit.getLogger().severe("Contact: https://vk.com/kai9595");
 
@@ -19,13 +40,18 @@ public final class GuiApi extends JavaPlugin {
         setupConfig();
         Gui.onEnable();
         guiHandler = new GuiHandler();
-        Bukkit.getPluginManager().registerEvents(guiHandler, this);
+        Bukkit.getPluginManager().registerEvents(guiHandler, plugin);
     }
 
-    @Override
-    public void onDisable() {}
-
     public static GuiApi getInstance() { return instance; }
+
+    public FileConfiguration getConfig() { return config; }
+
+    public void saveConfig()
+    {
+        try { config.save(file); }
+        catch(Exception exception) {}
+    }
 
     private void setupConfig()
     {

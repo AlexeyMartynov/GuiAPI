@@ -1,3 +1,0 @@
-name: GuiAPI
-version: '${project.version}'
-main: io.guthub.bybyzyanka.guiapi.GuiApi
