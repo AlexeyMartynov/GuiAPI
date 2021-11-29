@@ -16,7 +16,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public abstract class Gui extends GuiHolder { 
 	
-	protected ItemStack back = GuiContent.BACK.getItem();
+	protected Button back = new Button(GuiContent.BACK);
 	
 	private static Map<Player, List<Inventory>> queue = new HashMap<>();
 	

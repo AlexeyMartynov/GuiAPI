@@ -12,12 +12,18 @@ import java.io.File;
 
 public enum GuiContent {
 
-    PREVIOUS,
-    NEXT,
-    BACK,
-    PAGE,
-    ACCEPT,
-    DECLINE;
+    PREVIOUS(26),
+    NEXT(8),
+    BACK(0),
+    PAGE(17),
+    ACCEPT(12),
+    DECLINE(14);
+
+    private int slot;
+
+    private GuiContent(int slot) { this.slot = slot; }
+
+    public int getSlot() { return slot; }
 
     public ItemStack getItem()
     {

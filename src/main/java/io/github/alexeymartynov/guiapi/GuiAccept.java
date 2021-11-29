@@ -9,8 +9,8 @@ import org.bukkit.inventory.ItemStack;
 
 public class GuiAccept extends Gui {
 
-	public static ItemStack accept = GuiContent.ACCEPT.getItem();
-	public static ItemStack decline = GuiContent.DECLINE.getItem();
+	public static Button accept = new Button(GuiContent.ACCEPT);
+	public static Button decline = new Button(GuiContent.DECLINE);
 	protected String acceptCommand;
 	protected String declineCommand;
 
@@ -61,9 +61,9 @@ public class GuiAccept extends Gui {
 	@Override
 	public boolean create(Player player) 
 	{
-		inventory.setItem(0, null);
-		inventory.setItem(12, accept);
-		inventory.setItem(14, decline);
+		inventory.setItem(back.getSlot(), null);
+		inventory.setItem(accept.getSlot(), accept);
+		inventory.setItem(decline.getSlot(), decline);
 		return true;
 	}
 }

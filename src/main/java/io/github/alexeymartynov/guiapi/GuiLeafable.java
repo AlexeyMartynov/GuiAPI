@@ -9,8 +9,9 @@ import org.bukkit.inventory.ItemStack;
 
 public abstract class GuiLeafable extends Gui {
 	
-	protected ItemStack nextPage = GuiContent.NEXT.getItem();
-	protected ItemStack previousPage = GuiContent.PREVIOUS.getItem();
+	protected Button nextPage = new Button(GuiContent.NEXT);
+	protected Button previousPage = new Button(GuiContent.PREVIOUS);
+	protected Button currentPage = new Button(GuiContent.PAGE);
 	protected List<Integer> skipIndexes = new ArrayList<Integer>();
 	protected int page = 1;
 	protected int size;
@@ -39,8 +40,8 @@ public abstract class GuiLeafable extends Gui {
 
 		this.page = page;
 		turnPage();
-		inventory.setItem(17, UtilItem.create(GuiContent.PAGE.getItem().getType(), 1, (byte) 0,
-				GuiContent.PAGE.getItem().getItemMeta().getDisplayName() + this.page));
+		inventory.setItem(currentPage.getSlot(), UtilItem.create(currentPage.getType(), 1, (byte) 0,
+				currentPage.getItemMeta().getDisplayName() + this.page));
 	}
 	
 	@Override
@@ -55,8 +56,8 @@ public abstract class GuiLeafable extends Gui {
 	
 	public void removePageButtons() 
 	{
-		inventory.setItem(8, null);
-		inventory.setItem(17, null);
-		inventory.setItem(26, null);
+		inventory.setItem(currentPage.getSlot(), null);
+		inventory.setItem(nextPage.getSlot(), null);
+		inventory.setItem(previousPage.getSlot(), null);
 	}
 }
