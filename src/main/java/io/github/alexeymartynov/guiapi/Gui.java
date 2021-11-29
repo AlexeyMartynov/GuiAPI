@@ -73,5 +73,5 @@ public abstract class Gui extends GuiHolder {
 			return;
 
         addToQueue(player, inventory);
-	} 
+	}
 }
