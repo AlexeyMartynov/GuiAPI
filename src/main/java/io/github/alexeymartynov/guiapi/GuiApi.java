@@ -38,7 +38,7 @@ public final class GuiApi {
 
         instance = this;
         setupConfig();
-        Gui.onEnable();
+        Gui.onEnable(plugin);
         guiHandler = new GuiHandler();
         Bukkit.getPluginManager().registerEvents(guiHandler, plugin);
     }

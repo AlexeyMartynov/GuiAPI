@@ -5,11 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public abstract class Gui extends GuiHolder { 
@@ -18,7 +20,7 @@ public abstract class Gui extends GuiHolder {
 	
 	private static Map<Player, List<Inventory>> queue = new HashMap<>();
 	
-	public static void onEnable() 
+	public static void onEnable(JavaPlugin plugin)
 	{
 		new BukkitRunnable() 
         {
@@ -39,7 +41,7 @@ public abstract class Gui extends GuiHolder {
 	            	else queue.put(player, list);
         		}
         	}
-        }.runTaskTimer(GuiApi.getInstance(), 30, 30);
+        }.runTaskTimer(plugin, 30, 30);
 	}
 	
 	private static void addToQueue(Player player, Inventory inventory) 
@@ -60,7 +62,13 @@ public abstract class Gui extends GuiHolder {
 	public abstract boolean create(Player player);
 	
 	public void open(Player player) 
-	{  
+	{
+		if(GuiApi.getInstance() == null)
+		{
+			Bukkit.getLogger().severe("GuiAPI is not enabled!");
+			return;
+		}
+
 		if(!create(player))
 			return;
 
