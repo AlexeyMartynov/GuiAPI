@@ -69,8 +69,9 @@ public abstract class Gui extends GuiHolder {
 			return;
 		}
 
-		if(!create(player))
-			return;
+		if(inventory.getContents() == null || inventory.getContents().length == 0)
+			if(!create(player))
+				return;
 
         addToQueue(player, inventory);
 	}

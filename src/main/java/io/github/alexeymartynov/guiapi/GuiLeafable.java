@@ -47,8 +47,11 @@ public abstract class GuiLeafable extends Gui {
 	@Override
 	public void open(Player player) 
 	{
-		setPage(page); 
-		create(player);
+		setPage(page);
+		if(inventory.getContents() == null || inventory.getContents().length == 0)
+			if(!create(player))
+				return;
+
 		player.openInventory(inventory);
 	}
 	

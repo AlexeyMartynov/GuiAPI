@@ -9,13 +9,13 @@ import java.io.File;
 
 public final class GuiApi {
 
-    private GuiHandler guiHandler;
-    private File file;
-    private FileConfiguration config;
+    private static GuiHandler guiHandler;
+    private static File file;
+    private static FileConfiguration config;
 
     private static GuiApi instance;
 
-    public void setup(JavaPlugin plugin)
+    public GuiApi(JavaPlugin plugin)
     {
         if(plugin == null)
             return;
